@@ -13,7 +13,6 @@ export class Http {
     }
 
     if (!config) {
-      console.log(defaultConfig)
       return { ...defaultConfig }
     }
 
