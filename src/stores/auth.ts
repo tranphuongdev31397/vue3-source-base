@@ -1,3 +1,4 @@
+import { Authentication } from '@/constants'
 import { defineStore, acceptHMRUpdate } from 'pinia'
 
 interface IUser {
@@ -22,7 +23,7 @@ export const useAuthStore = defineStore('auth', () => {
   const setIsLoggedIn = (statusLogin: boolean) => {
     isLoggedIn.value = statusLogin
   }
-  const accessToken = useLocalStorage<string | null>('accessToken', null)
+  const accessToken = useLocalStorage<string | null>(Authentication.AccessToken, null)
   const setTokens = (token: IToken) => {
     tokens.value = token
     // Set Local Storage
